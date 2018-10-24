@@ -193,7 +193,7 @@ Please note that we can only honor special invoicing requests that come from the
 
 ## How do I remove or delete my account?
 
-Contact us at [support@zeit.co](support@zeit.co?subject=Remove%20account) from the account's email address.
+You can delete your account at the [account](https://zeit.co/account).
 
 ## How many levels of subdomains can I use?
 
