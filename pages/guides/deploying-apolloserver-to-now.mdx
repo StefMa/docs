@@ -1,9 +1,7 @@
 import Guide from '~/components/layout/guide'
 import Snippet from '~/components/snippet'
 import Caption from '~/components/text/caption'
-import Card from '~/components/card'
 import { InlineCode } from '~/components/text/code'
-import Note from '~/components/text/note'
 
 export const meta = {
   title: 'Deploying Apollo Server to Now',
@@ -12,7 +10,7 @@ export const meta = {
   authors: ['unicodeveloper, msweeneydev'],
   url: '/guides/deploying-apolloserver-to-now',
   editUrl: 'pages/guides/deploying-apolloserver-to-now.mdx',
-  lastEdited: '2019-08-06T14:58:43.000Z'
+  lastEdited: '2019-08-12T14:08:03.000Z'
 }
 
 In this guide, we will be deploying an Apollo GraphQL server with ZEIT Now.
@@ -59,7 +57,7 @@ const server = new ApolloServer({
   playground: true
 })
 
-module.exports = server.createHandler({ path: '/api/' })
+module.exports = server.createHandler({ path: '/api' })
 ```
 
 <Caption>
@@ -79,36 +77,9 @@ Deploying your project could not be easier and can be done with **just a single 
   Deploying the application with the <InlineCode>now</InlineCode> command.
 </Caption>
 
-Your project has now been deployed, you can access the Apollo Server endpoint, using the deployment URL generated, at `/api/`.
-
-<Note warning>
-  Because the <InlineCode>index.js</InlineCode> file is placed at the root of
-  the <InlineCode>/api</InlineCode> directory, the trailing slash is required
-  when using the endpoint.
-</Note>
+Your project has now been deployed, you can access the Apollo Server endpoint, using the deployment URL generated, at `/api`.
 
 If you want to deploy your ApolloServer project when you push to a Git repository, you can use either [Now for GitHub](/docs/v2/integrations/now-for-github/) or [Now for GitLab](/docs/v2/integrations/now-for-gitlab/) to have your project automatically deployed on every push, and aliased on push to master.
-
-## Resources
-
-For more information on Apollo Server, please refer to [the Apollo Server documentation](https://www.apollographql.com/docs/apollo-server/).
-
-To configure Now further, please see these additional topics and guides:
-
-<Card title="Deploying Basics" href="/docs/v2/deployments/basics">
-  Deploy any of your applications with ZEIT Now.
-</Card>
-
-<Card
-  title="Aliasing"
-  href="/docs/v2/custom-domains#deploying-with-your-domain"
->
-  Learn more about aliasing to your deployments.
-</Card>
-
-<Card title="More Guides" href="/guides">
-  See more guides that help you move forward with your projects and deployments.
-</Card>
 
 export default ({ children }) => <Guide meta={meta}>{children}</Guide>
 
